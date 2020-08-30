@@ -1,0 +1,50 @@
+Working backwards
+
+To test, application.py should start with the Current Date list of lists and render that to index
+I can use the list of list that's in covid_output.txt for the table
+That way, I don't have to worry about the data pull and pandas -- I can just worry about the HTML transfer and flask working.
+**********************
+8/9/2020: 2 issues:
+    c) Line 512 in scratch.py: region_table_calcs has the information needed for the X-day averages
+
+8/14/2020:
+    NEXT) In covid_usf.py ... this will make it easier to run that program repeatedly
+        4) Pull in the program from scratch.py that will pull in the final calculations for the 7-day averages.
+        5) Adjust for 7 days instead of 4 (x = 7, not x = 4)
+
+8/18/2020:
+    Next) I'm still making sure that the region_table_last portion is correct.
+    As of now, the list_subtract was just subtracting the first county if there were multiple in the region
+    need to test that the loop starting on line 274 is working properly.
+
+8/19/2020: The final calculations seem to be working: REGION_LAST_CALCS and REGION_TABLE_CALCS (last 7 days)
+    Next)
+    Convert those data into formatted strings.
+    Will the sorting be a problem? The two final tables are in different orders -- WHY?
+    Have the program run in application.py
+    Send the final two calculation tables to index.html
+    Add some footnotes to index.html describing: (1) Date as of X, (2) Data inconsistencies.
+
+
+?? Consider creating a function that finds the maximum and minimum of a column in the CSV file.
+
+?? Add per capita information. Easy enough to get county population information
+
+layout.html: Basic layout.html for index.html as well as other websites.
+index.html: Build index.html, which will be a the table as envisioned (of latest date and 7-day average)
+
+application.py: Run "flask run" which will run application.py. Runs the app which should run the program and render the template using layout to index.html.
+
+application.py structure:
+    definitions
+    flask part of it needs to surround the main program of pulling in the new data and creating the current date/7-day average
+    and then it needs to render the template
+
+application.py needs:
+    a) Table with latest date
+    b) Table with 7-day average
+    c) Number of rows
+    d) Latest date
+
+***************************
+.

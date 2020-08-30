@@ -1,0 +1,10 @@
+County,Age,Age_group,Gender,Jurisdiction,Travel_related,Origin,EDvisit,Hospitalized,Died,Case_,Contact,Case1,EventDate,ChartDate,ObjectId
+Brevard,76,75-84 years,Female,FL resident,Yes,NY,YES,NO,NA,Yes,YES,2020/03/17 05:00:00+00,2020/03/06 00:00:00+00,2020/03/17 05:00:00+00,101
+Broward,19,15-24 years,Female,FL resident,Yes,Ireland,YES,NO,NA,Yes,Yes,2020/03/15 05:00:00+00,2020/03/11 00:00:00+00,2020/03/15 05:00:00+00,102
+Broward,36,35-44 years,Male,FL resident,No,NA,YES,NO,NA,Yes,Yes,2020/03/13 05:00:00+00,2020/03/07 00:00:00+00,2020/03/13 05:00:00+00,103
+Dade,54,45-54 years,Male,FL resident,Yes,SPAIN,YES,NO,NA,Yes,Yes,2020/03/19 05:00:00+00,2020/03/06 00:00:00+00,2020/03/19 05:00:00+00,104
+Palm Beach,65,65-74 years,Male,FL resident,Yes,NY,YES,YES,NA,Yes,Yes,2020/03/14 05:00:00+00,2020/03/07 00:00:00+00,2020/03/14 05:00:00+00,105
+Lee,57,55-64 years,Male,Non-FL resident,Yes,"FL; FRANCE; UNITED KINGDOM",NO,NO,NA,Yes,UNKNOWN,2020/03/12 05:00:00+00,2020/03/01 00:00:00+00,2020/03/12 05:00:00+00,106
+St. Johns,63,55-64 years,Male,Non-FL resident,Yes,NY,YES,YES,NA,Yes,NO,2020/03/12 05:00:00+00,2020/02/28 00:00:00+00,2020/03/12 05:00:00+00,107
+Volusia,66,65-74 years,Female,FL resident,Yes,"EGYPT; GERMANY; ISRAEL",YES,NO,NA,Yes,Yes,2020/03/08 05:00:00+00,2020/03/02 00:00:00+00,2020/03/08 05:00:00+00,108
+Lee,60,55-64 years,Female,FL resident,No,NA,YES,YES,NA,Yes,NO,2020/05/26 05:00:00+00,2020/05/22 00:00:00+00,2020/05/26 05:00:00+00,109

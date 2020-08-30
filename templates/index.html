@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    COVID Data SWFL
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th align="center">Region</th>
+                <th>Today's Cases</th>
+                <th>7-Day Avg Cases</th>
+                <th>Today's Hospitalizations</th>
+                <th>7-Day Avg Hospitalizations</th>
+                <th>Today's Deaths</th>
+                <th>7-Day Avg Deaths</th>
+                <th>Today's Total Tests (a)</th>
+                <th>7-Day Avg Total Tests</th>
+                <th>% Positive (a)</th>
+                <th>7-Day Avg % Positive</th>
+            </tr>
+          </thead>
+        <tbody>
+        {% for i in range(1, rows + 1) %}
+            <tr style="height:50px">
+                <!--Region-->
+                <td align="center">{{region_last_calcs[i][0]}}</td>
+                <!--Today's Cases-->
+                <td style="vertical-align:center">{{region_last_calcs[i][1]}}</td>
+                <!--7-Day Avg Cases-->
+                <td style="vertical-align:center">{{region_table_calcs[i][1]}}</td>
+                <!--Today's Hospitalizations-->
+                <td style="vertical-align:center">{{region_last_calcs[i][2]}}</td>
+                <!--7-Day Avg Hospitalizations-->
+                <td style="vertical-align:center">{{region_table_calcs[i][2]}}</td>
+                <!--Today's Deaths-->
+                <td style="vertical-align:center">{{region_last_calcs[i][3]}}</td>
+                <!--7-Day Avg Deaths-->
+                <td style="vertical-align:center">{{region_table_calcs[i][3]}}</td>
+                <!--Today's Tests-->
+                <td style="vertical-align:center">{{region_last_calcs[i][4]}}</td>
+                <!--7-Day Avg Tests-->
+                <td style="vertical-align:center">{{region_table_calcs[i][4]}}</td>
+                <!--Today's Positive %-->
+                <td style="vertical-align:center">{{region_last_calcs[i][5]}}</td>
+                <!--7-Day Avg Positive %-->
+                <td style="vertical-align:center">{{region_table_calcs[i][5]}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="container-sm" align="left">
+        <p>Data as of {{date_max}}. Data also reflects all cases, not just Florida residents.</p>
+        <p>Thanks to the University of South Florida for making the daily data available in a consistent format <a href="https://covid19-usflibrary.hub.arcgis.com/search?tags=covidbycounty">here</a></p>
+        <p>(a) Florida Department of Health defines a negative test as "Total negative persons tested for all Florida and non-Florida residents." Calculated here, percent positive is total cases (residents and not) divided by (total cases plus total negatives). However, the calculation differs from the published number on the <a href="http://ww11.doh.state.fl.us/comm/_partners/covid19_report_archive/state_reports_latest.pdf">Florida Department of Health daily pdf</a>, which calculates the percentage only for Florida residents. While non-residents have historically tested positive at a higher rate, the sheer numbers of non-residents are not large enough to make such a dramatic difference. This is an area for further study. For now, it's valid to compare the current day to the 7-day moving average or across the Florida regions, as defined here. However, percent positive should <b>not</b> be compared to other states or datasets.</a></p>
+    </div>
+{% endblock %}
