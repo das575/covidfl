@@ -400,5 +400,5 @@ def covid_usf():
     print(final_table)
     return(final_table)
 
-# Undo this if you need to run the program in covid_usf in the Terminal on its own.
-# covid_usf()
+# Undo this if you need to run the program in covidfl in the Terminal on its own.
+# covidfl()

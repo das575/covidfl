@@ -1,4 +1,4 @@
-# Functions used in the data pull and calculations for covid_usf, which is the core function for application.py
+# Functions used in the data pull and calculations for covidfl, which is the core function for application.py
 
 # Function to subtract the items in the list from one another. This is used to calculate the daily changes
 def list_subtract(list1, list2):
