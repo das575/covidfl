@@ -10,12 +10,6 @@ app = Flask(__name__)
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-# # Configure session to use filesystem (instead of signed cookies)
-# app.config["SESSION_FILE_DIR"] = mkdtemp()
-# app.config["SESSION_PERMANENT"] = False
-# app.config["SESSION_TYPE"] = "filesystem"
-# Session(app)
-
 @app.route("/")
 def index():
     # return 'Index!'
@@ -30,15 +24,3 @@ def index():
     columns = len(region_last_calcs[0])
     data_is_late = final_table[3]
     return render_template("index.html", region_last_calcs=region_last_calcs, region_table_calcs=region_table_calcs, rows=rows, date_max=date_max,data_is_late=data_is_late)
-
-# @app.route('/Hello')
-# def hello():
-#     return "Hello World"
-
-# @app.route('/members')
-# def members():
-#     return "Members"
-
-# @app.route('/members/<name>/')
-# def getMember(name):
-#     return name

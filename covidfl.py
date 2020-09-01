@@ -53,7 +53,7 @@ def covidfl():
     except:
         print('covidfl.csv file does not exist')
 
-    print(region('Gilchrist'))
+    # print(region('Gilchrist'))
 
     date_max_csv = data_fl['Date'].max()
     # print('\nDATE_MAX_CSV: ',date_max_csv)
@@ -70,7 +70,7 @@ def covidfl():
         #################
         # if dating information is required, then first test for 404
         today = datetime.datetime.strftime(datetime.date.today(), '%m%d%Y')
-        print('\nTODAY **************************************** ', today)
+        # print('\nTODAY **************************************** ', today)
         url = "https://covid19-usflibrary.hub.arcgis.com/datasets/florida-covid19-" + today + "-bycounty-csv"
         try:
             response = requests.get(url)
@@ -84,7 +84,7 @@ def covidfl():
             end = datetime.date.today()
         else:
             end = datetime.date.today() - datetime.timedelta(days=1)
-        print('END ********************************\n', end)
+        # print('END ********************************\n', end)
         # Sets the days to iterate for the file getting loop
         days_iter = end.toordinal() - start.toordinal()
     else:
@@ -249,8 +249,8 @@ def covidfl():
     # print(region_date_chg)
     # print('Number of rows in region_date_chg: ' + str(len(region_date_chg)))
     region_table_last = region_date_chg[0:9]
-    print('REGION_TABLE_LAST *********************************************')
-    print(region_table_last)
+    # print('REGION_TABLE_LAST *********************************************')
+    # print(region_table_last)
 
     # This is a list of lists of the date and region combinations for the last date. Also need to do the calculations for total tests and % positive
     # region_table_last = []
@@ -354,8 +354,8 @@ def covidfl():
     # for i in range(1,len(region_table_means)):
     #     region_table_means[i].insert(0,index[i - 1])
     region_table_means = region_table_means_head + pd_region_table_means.values.tolist()
-    print("REGION_TABLE_MEANS *******************************")
-    print(region_table_means)
+    # print("REGION_TABLE_MEANS *******************************")
+    # print(region_table_means)
 
     # Re-sorts the means table so it matches the region_last_calcs:
     region_table_means_temp = [region_table_means[0]]
@@ -364,8 +364,8 @@ def covidfl():
             if region_table_means[i][0] == region:
                 region_table_means_temp.append(region_table_means[i])
     region_table_means = region_table_means_temp
-    print("REGION_TABLE_MEANS *******************************")
-    print(region_table_means)
+    # print("REGION_TABLE_MEANS *******************************")
+    # print(region_table_means)
 
 
     # Create the 'region_last_calcs' (list of lists)
@@ -379,8 +379,8 @@ def covidfl():
         tests_calc = round(cases_calc + negatives_calc,0)
         pct_pos_calc = round((cases_calc / (cases_calc + negatives_calc) *100) , 1)
         region_last_calcs.append([region_table_last[i][0],commas_place(cases_calc),commas_place(hosp_calc),commas_place(deaths_calc),commas_place(tests_calc),pct(pct_pos_calc)])
-    print("REGION_LAST_CALCS *******************************")
-    print(region_last_calcs)
+    # print("REGION_LAST_CALCS *******************************")
+    # print(region_last_calcs)
 
     # Create the 'region_table_calcs' (list of lists)
     region_table_calcs = [['Region','CasesAll_Chg','C_HospYes_Calc_Chg','Deaths_Chg','Tests_Chg','Pct_Pos_Calc']]
@@ -392,12 +392,12 @@ def covidfl():
         tests_calc = round(cases_calc + negatives_calc,1)
         pct_pos_calc = round(cases_calc / (cases_calc + negatives_calc) * 100, 1)
         region_table_calcs.append([region_table_means[i][0],commas_place(cases_calc),commas_place(hosp_calc),commas_place(deaths_calc),commas_place(tests_calc),pct(pct_pos_calc)])
-    print("REGION_TABLE_CALCS *******************************")
-    print(region_table_calcs)
+    # print("REGION_TABLE_CALCS *******************************")
+    # print(region_table_calcs)
 
     final_table = [region_last_calcs,region_table_calcs,date_max,data_is_late]
-    print("FINAL_TABLE *******************************")
-    print(final_table)
+    # print("FINAL_TABLE *******************************")
+    # print(final_table)
     return(final_table)
 
 # Undo this if you need to run the program in covidfl in the Terminal on its own.
