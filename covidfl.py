@@ -12,7 +12,7 @@ from flask import Flask, flash, jsonify, redirect, render_template, request, ses
 from flask_session import Session
 from tempfile import mkdtemp
 # The following import is from my own custom function file.
-from covid_usf_helpers import list_subtract, list_add2, list_add3, commas_place, pct
+from covidfl_helpers import list_subtract, list_add2, list_add3, commas_place, pct
 
 # Configure application
 app = Flask(__name__)
@@ -26,7 +26,7 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-def covid_usf():
+def covidfl():
     # Function to determine the right region
     def region(county):
         if county == 'Collier':
